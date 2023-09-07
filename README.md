@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ## 2. Membuat Proyek Django Baru
 Selanjutnya, saya perlu membuat proyek Django baru. Saya dapat melakukannya dengan menggunakan perintah `django-admin createproject NAMA_PROYEK`. Ini akan membuat direktori baru dengan nama `NAMA_PROYEK`, yang akan berisi file `manage.py` dan folder `NAMA_PROYEK` yang berisi pengaturan dan routing proyek.
 
-Saya dapat menjalankan proyek dengan perintah `python manage.py runserver`. Pastikan untuk menjalankannya sebelum mengakses `http://localhost:8000/hello`, yang merupakan URL web Django saya.
+Saya dapat menjalankan proyek dengan perintah `python manage.py runserver`. Pastikan untuk menjalankannya sebelum mengakses `http://localhost:8000/main`, yang merupakan URL web Django saya.
 
 ## 3. Membuat Aplikasi "main"
 Selanjutnya, saya perlu membuat aplikasi dengan nama "main" di dalam proyek saya. Saya dapat melakukannya dengan perintah `python manage.py createapp NAMA_APLIKASI`. Setelah membuat aplikasi, saya perlu mendaftarkannya di dalam file `settings.py` yang berada di dalam folder proyek. Saya tambahkan nama aplikasi tersebut ke dalam `INSTALLED_APPS` seperti ini:
@@ -73,20 +73,20 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.hello),
+    path('', views.main),
 ]
 ```
 
-Dengan konfigurasi ini, ketika saya mengakses `http://localhost:8000/iniapp/hello` di browser, saya akan melihat apa yang dikembalikan oleh fungsi `hello` yang ada di dalam file `views.py`.
+Dengan konfigurasi ini, ketika saya mengakses `http://localhost:8000/iniapp/main` di browser, saya akan melihat apa yang dikembalikan oleh fungsi `main` yang ada di dalam file `views.py`.
 
-Jika saya ingin aplikasi saya berada langsung di path utama, seperti `http://localhost:8000/hello`, saya bisa mengatur `urlpatterns` di dalam file `urls.py` proyek dengan cara ini:
+Jika saya ingin aplikasi saya berada langsung di path utama, seperti `http://localhost:8000/main`, saya bisa mengatur `urlpatterns` di dalam file `urls.py` proyek dengan cara ini:
 
 ```python
 path('', include('main.urls'))
 ```
 
 ## 5. Membuat Fungsi Render pada views.py
-Untuk mengatur tampilan yang akan dilihat oleh pengguna ketika mengakses `http://localhost:8000/hello`, saya perlu membuat halaman HTML. Saya buat direktori `templates` di dalam folder "main" dan tambahkan file HTML yang akan saya tampilkan, misalnya `main.html`. Isi file `main.html` dengan kode berikut:
+Untuk mengatur tampilan yang akan dilihat oleh pengguna ketika mengakses `http://localhost:8000/main`, saya perlu membuat halaman HTML. Saya buat direktori `templates` di dalam folder "main" dan tambahkan file HTML yang akan saya tampilkan, misalnya `main.html`. Isi file `main.html` dengan kode berikut:
 
 ```html
 <h1>Homework Reminder Page</h1>
@@ -113,7 +113,7 @@ def show_main(request):
     return render(request, "main.html", context)
 ```
 
-Perubahan ini akan langsung terlihat ketika saya mengakses `http://localhost:8000/hello`.
+Perubahan ini akan langsung terlihat ketika saya mengakses `http://localhost:8000/main`.
 
 ## 6. Membuat Model Sebagai Database
 Jika saya ingin menggunakan database, saya perlu membuat model yang akan menjadi penghubung antara Python dan database saya. Model ini akan berada di dalam file `models.py` di dalam aplikasi "main". Sebagai contoh, jika saya ingin membuat database yang berisi informasi tentang barang dengan atribut nama, jumlah, dan deskripsi, saya dapat membuat model seperti ini:
