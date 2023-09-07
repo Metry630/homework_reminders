@@ -86,16 +86,16 @@ path('', include('main.urls'))
 ```
 
 ## 5. Membuat Fungsi Render pada views.py
-Untuk mengatur tampilan yang akan dilihat oleh pengguna ketika mengakses `http://localhost:8000/hello`, saya perlu membuat halaman HTML. Saya buat direktori `templates` di dalam folder "main" dan tambahkan file HTML yang akan saya tampilkan, misalnya `hello.html`. Isi file `hello.html` dengan kode berikut:
+Untuk mengatur tampilan yang akan dilihat oleh pengguna ketika mengakses `http://localhost:8000/hello`, saya perlu membuat halaman HTML. Saya buat direktori `templates` di dalam folder "main" dan tambahkan file HTML yang akan saya tampilkan, misalnya `main.html`. Isi file `main.html` dengan kode berikut:
 
 ```html
-<head>
-    <title>Trading Inventory</title>
-</head>
-<body>
-    <h1>Nama : Eryawan Presma Yulianrifat</h1>
-    <h1>Kelas : PBP D</h1>
-</body>
+<h1>Homework Reminder Page</h1>
+<h5>Name: </h5>
+<p>{{ name }}<p>
+<h5>Jumlah: </h5>
+<p>{{ amount }}<p>
+<h5>Penjelasan: </h5>
+<p>{{ description }}</p>
 ```
 
 Kemudian, di dalam file `views.py`, saya dapat mengembalikan halaman HTML tersebut dengan menggunakan fungsi `render` seperti ini:
