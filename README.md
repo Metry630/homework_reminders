@@ -62,7 +62,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('iniapp/', include('main.urls'))
+    path('main/', include('main.urls'))
 ]
 ```
 
@@ -73,7 +73,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('hello/', views.hello),
+    path('', views.hello),
 ]
 ```
 
@@ -103,8 +103,14 @@ Kemudian, di dalam file `views.py`, saya dapat mengembalikan halaman HTML terseb
 ```python
 from django.shortcuts import render
 
-def hello(request):
-    return render(request, 'hello.html')
+def show_main(request):
+    context = {
+        'name': 'Pak Bepe',
+        'amount': 3,
+        'description': 'Tugas Kuliah'
+    }
+
+    return render(request, "main.html", context)
 ```
 
 Perubahan ini akan langsung terlihat ketika saya mengakses `http://localhost:8000/hello`.
