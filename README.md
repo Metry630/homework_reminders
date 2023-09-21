@@ -152,6 +152,8 @@ MVVM (Model-View-ViewModel): Memisahkan Model, tampilan (View), dan ViewModel ya
 
 # Panduan Implementasi
 
+## 
+
 ## Membuat Form (forms.py)
 
 APP/forms.py akan mengimplementasikan django.forms yang mempermudah pembuatan form kita. html sudah dihandle oleh library form tersebut. Contoh isi APP/forms.py adalah.
@@ -244,3 +246,46 @@ JSON sering digunakan sebagai sarana pertukaran data antara aplikasi (API) karen
 ![alt text](images/postman4.png)
 ![alt text](images/postman5.png)
 
+## Tugas 4
+
+# Panduan Implementasi
+
+## Membuat fungsi dan form registrasi 
+Saya membuat fungsi register pada views.py dan membuat HTML register.html yang dibuka saat seseorang mencoba mengakses halaman register. Saya kemudian menambahkan path url untuk register kedalam urls.py
+
+## Membuat fungsi login 
+Saya membuat fungsi login pada views.py dan membuat HTML login.html yang dibuka saat seseorang mencoba mengakses halaman login. Saya kemudian menambahkan path url untuk login kedalam urls.py
+
+## Membuat fungsi logout 
+Saya membuat fungsi logout pada views.py dan membuat tombol logout pada main.html. Saya kemudian menambahkan path url untuk logout kedalam urls.py
+
+## Merestriksi akses halaman main
+Saya menambahkan requirement login required untuk mengakses main, jadi hanya pengguna yang sudah login yang bisa masuk ke main.
+
+## Menggunakan data dari cookies
+Saya menggunakan cookies untuk mengakses terakhir kali user login, dan menampilkan last login pada page main.html
+
+## Menghubungkan product dengan user
+Saya memberikan hubungan antara masing-masing product dengan user, sehingga product hanya dapat diakses oleh user yang membuatnya
+
+
+
+## Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+UserCreationForm adalah formulir bawaan Django untuk pendaftaran pengguna.
+Kelebihannya adalah kemudahan penggunaan dan integrasi dengan otentikasi Django.
+Kekurangannya adalah kurangnya kustomisasi ekstensif.
+
+## Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+Autentikasi adalah verifikasi identitas pengguna.
+Otorisasi mengatur izin akses pengguna.
+Keduanya penting untuk memastikan identitas dan kontrol akses.
+
+## Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+Cookies adalah data kecil di browser untuk sesi dan preferensi pengguna.
+Django menggunakan cookies untuk mengelola sesi pengguna.
+Ini membantu mengidentifikasi pengguna dan menyimpan informasi sesi.
+
+## Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+Penggunaan cookies aman jika dienkripsi dengan baik dan terhindar dari XSS.
+HTTPS dianjurkan untuk mencegah session hijacking.
+Proteksi CSRF dan praktik terbaik dalam pengembangan web penting untuk keamanan.
