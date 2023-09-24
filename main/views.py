@@ -11,6 +11,8 @@ from django.contrib import messages
 import datetime
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect
+
 # Create your views here.
 
 
@@ -88,8 +90,44 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+def add_amount(request, product_id):
+    products = Product.objects.filter(user=request.user)
+
+    context = {
+    'name': request.user.username,
+    'class': 'PBP A',
+    'products': products,
+    'last_login': request.COOKIES['last_login'],
+    }
+
+    if request.method == 'POST':
+        product = get_object_or_404(Product, pk=product_id)
+        
+        product.amount += 1
+        product.save()
+
+    return render(request, "main.html", context)
 
 
+def add_amount(request, id):
+    current_product = Product.objects.get(pk=id)
+    current_product.amount += 1
+    current_product.save()
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def decrement_amount(request, id):
+    current_product = Product.objects.get(pk=id)
+    current_product.amount -= 1
+    if current_product.amount == 0 :
+        return delete_product(request, id)
+    current_product.save()
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+
+def delete_product(request, id):
+    current_product = Product.objects.get(pk=id)
+    current_product.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
 
 
 
