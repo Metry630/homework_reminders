@@ -289,3 +289,56 @@ Ini membantu mengidentifikasi pengguna dan menyimpan informasi sesi.
 Penggunaan cookies aman jika dienkripsi dengan baik dan terhindar dari XSS.
 HTTPS dianjurkan untuk mencegah session hijacking.
 Proteksi CSRF dan praktik terbaik dalam pengembangan web penting untuk keamanan.
+
+
+## Tugas 5
+
+## Panduan implementasi
+
+Pertama, saya memberikan styling warna, font, dan text-align pada masing-masing elemen dalam main.html
+
+Saya juga memberikan border, padding, dan text-align pada tabel.
+Untuk mengakses baris terakhir dalam tabel, saya menggunakan last-child, yang memiliki prioritas paling tinggi dibandingkan dengan getter-getter lain saya, sehingga ia mengoverride pewarnaan lainnya.
+
+Cara untuk file-file lain cukup serupa, dimana perbedaan utama adalah saya menggunakan class selector dalam register, create_product, dan login.html 
+
+
+1. **Manfaat dari Setiap Element Selector dan Waktu yang Tepat untuk Menggunakannya:**
+
+   - **Element Selector (`element`)**: Selector ini berguna untuk menggaya semua elemen dengan jenis yang sama dalam halaman web. Ini cocok digunakan ketika ingin memberikan gaya seragam pada semua elemen yang sama jenisnya.
+
+   - **Class Selector (`.class`)**: Selector ini digunakan untuk menggaya elemen dengan class tertentu. Dapat digunakan ketika ingin mengaplikasikan gaya khusus pada beberapa elemen dengan class yang sama.
+
+   - **ID Selector (`#id`)**: Selector ini digunakan untuk menggaya elemen dengan ID tertentu. Ini cocok digunakan ketika hanya ingin mengaplikasikan gaya pada elemen tunggal yang memiliki ID tertentu.
+
+   - **Pseudo-class Selector (`:pseudo-class`)**: Selector ini berguna untuk menggaya elemen dalam keadaan khusus, seperti `:hover` untuk mengubah tampilan saat kursor berada di atasnya.
+
+   - **Attribute Selector (`[attribute]`)**: Selector ini berguna untuk memilih elemen berdasarkan atributnya, misalnya `[target="_blank"]` untuk memilih tautan yang membuka dalam tab baru.
+
+   - **Universal Selector (`*`)**: Selector ini berguna untuk menggaya semua elemen dalam halaman web. Digunakan untuk mengatur gaya dasar situs secara keseluruhan.
+
+   - **Descendant Selector (`ancestor descendant`)**: Selector ini digunakan untuk memilih elemen yang merupakan turunan dari elemen yang lebih tinggi dalam hierarki.
+
+   - **Child Selector (`parent > child`)**: Selector ini digunakan untuk memilih elemen yang merupakan anak langsung dari elemen induk.
+
+2. **HTML5 Tag yang Dikenal:**
+
+   Beberapa tag HTML5 yang umum dan penting meliputi `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>`, `<video>`, `<audio>`, `<canvas>`, `<form>`, `<input>`, `<button>`, dan lain-lain.
+
+3. **Perbedaan Antara Margin dan Padding:**
+
+   - **Margin**: Margin adalah ruang di luar batas luar elemen. Ini mengatur jarak antara elemen dengan elemen lainnya di sekitarnya.
+
+   - **Padding**: Padding adalah ruang di dalam batas luar elemen. Ini mengatur jarak antara batas luar elemen dan kontennya.
+
+4. **Perbedaan Antara Framework CSS Tailwind dan Bootstrap:**
+
+   - **Tailwind CSS**: Tailwind adalah framework CSS yang bersifat utility-first, memungkinkan penggunaan kelas-kelas utilitas untuk mengatur tampilan. Cocok untuk proyek dengan desain kustom dan fleksibilitas tinggi.
+
+   - **Bootstrap**: Bootstrap adalah framework CSS yang menyediakan komponen UI yang sudah jadi dan gaya default. Cocok untuk prototyping dan proyek dengan tenggat waktu singkat.
+
+   **Kapan Menggunakan Bootstrap atau Tailwind?**
+
+   - Gunakan **Bootstrap** untuk proyek yang memerlukan pengembangan cepat dan tidak memerlukan penyesuaian gaya yang mendalam.
+
+   - Gunakan **Tailwind CSS** untuk proyek yang memerlukan kontrol detail atas tampilan dan desain yang sangat kustom.
