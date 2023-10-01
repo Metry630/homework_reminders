@@ -5,11 +5,72 @@
 {% endblock meta %}
 
 {% block content %}
+<style>
+    /* Style the login container */
+    .login {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-<div class = "login">
+    /* Style the login form */
+    .login h1 {
+        font-size: 24px;
+        text-align: center;
+    }
 
+    .login form {
+        text-align: center;
+    }
+
+    .login table {
+        margin: 0 auto;
+    }
+
+    .login input[type="text"],
+    .login input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .login .btn.login_btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .login .btn.login_btn:hover {
+        background-color: #0056b3;
+    }
+
+    /* Style error messages */
+    .login ul {
+        list-style-type: none;
+        padding: 0;
+        color: #ff0000;
+    }
+
+    .login ul li {
+        margin: 5px 0;
+    }
+
+    /* Style the "Register Now" link */
+    .login a {
+        text-decoration: none;
+        color: #007bff;
+    }
+</style>
+
+<div class="login">
     <h1>Login</h1>
-
     <form method="POST" action="">
         {% csrf_token %}
         <table>
@@ -17,29 +78,23 @@
                 <td>Username: </td>
                 <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
             </tr>
-                    
             <tr>
                 <td>Password: </td>
                 <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
             </tr>
-
             <tr>
                 <td></td>
                 <td><input class="btn login_btn" type="submit" value="Login"></td>
             </tr>
         </table>
     </form>
-
     {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
 </div>
-
 {% endblock content %}

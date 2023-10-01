@@ -1,8 +1,88 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Homework Reminder Page</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Reminder Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        h5 {
+            font-size: 16px;
+            color: #777;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Style the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        a button {
+            margin-top: 20px;
+            background-color: #28a745;
+        }
+
+        a button:hover {
+            background-color: #1e7e34;
+        }
+
+        table tr:last-child {
+            background-color: #ffcccc; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Homework Reminder Page</h1>
+    
     <h5>Name:</h5>
     <p>{{name}}</p>
 
@@ -48,6 +128,7 @@
             </tr>
         {% endfor %}
     </table>
+
     
     <br />
     <h5>Sesi terakhir login: {{ last_login }}</h5>
@@ -63,5 +144,5 @@
             Logout
         </button>
     </a>
-    
+</body>
 {% endblock content %}
