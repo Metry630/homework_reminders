@@ -342,3 +342,19 @@ Cara untuk file-file lain cukup serupa, dimana perbedaan utama adalah saya mengg
    - Gunakan **Bootstrap** untuk proyek yang memerlukan pengembangan cepat dan tidak memerlukan penyesuaian gaya yang mendalam.
 
    - Gunakan **Tailwind CSS** untuk proyek yang memerlukan kontrol detail atas tampilan dan desain yang sangat kustom.
+
+## Tugas 6
+
+## Panduan Implementasi
+
+1. **Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.**
+Dalam asynchronous programming, tugas dijalankan secara berurutan satu per satu, sedangkan dalam synchronous programming, beberapa tugas dapat dijalankan secara bersamaan tanpa harus menunggu tugas sebelumnya selesai terlebih dahulu.
+
+2. **Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.**
+Event-driven programming adalah paradigma pemrograman di mana program berjalan sebagai respons terhadap kejadian atau event yang terjadi. Contoh penerapannya dalam tugas ini adalah saat kita mengklik tombol untuk menambahkan item menggunakan AJAX, yang mengakibatkan munculnya modal form untuk menambahkan item.
+
+3. **Jelaskan penerapan asynchronous programming pada AJAX.**
+Penggunaan asynchronous programming dalam AJAX adalah ketika kita mengirim permintaan (request) ke server, tidak perlu menunggu respons dari server sebelum melanjutkan kode program berikutnya. Cara ini dapat diimplementasikan dengan menambahkan kata kunci "async" ke dalam fungsi yang mengirim permintaan ke server, dan menggunakan kata kunci "await" sebelum operasi "fetch" untuk menunggu respons dari server.
+
+4. **Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.**
+Fetch API adalah antarmuka program aplikasi (API) JavaScript yang lebih modern, ringan, dan mudah digunakan. Di sisi lain, jQuery adalah sebuah library JavaScript yang sudah ada sejak lama, menyediakan lebih banyak fitur, dan memiliki kompatibilitas lintas browser yang kuat. Pilihan antara keduanya sangat tergantung pada kebutuhan proyek, namun untuk proyek-proyek modern, penggunaan Fetch API biasanya lebih direkomendasikan karena sederhana, efisien, dan lebih sesuai dengan standar terbaru dalam pengembangan web.
