@@ -1,6 +1,5 @@
-Link adaptable:
-https://homeworkreminderz.adaptable.app/main/
-
+Link Deployment:
+https://homeworkreminders.up.railway.app
 
 # Tugas 2
 
@@ -346,6 +345,15 @@ Cara untuk file-file lain cukup serupa, dimana perbedaan utama adalah saya mengg
 ## Tugas 6
 
 ## Panduan Implementasi
+
+Pertama, saya menyiapkan sebuah fungsi di `views.py` untuk mengambil informasi produk dari pengguna menggunakan teknologi Ajax. Fungsi tersebut bertujuan untuk mengambil objek yang terkait dengan `request.user` dari database dan kemudian mengembalikan data dalam format JSON. Selanjutnya, saya melakukan konfigurasi rute untuk fungsi ini di berkas `urls.py`. Selain itu, saya melakukan perubahan dalam cara tampilan data produk di halaman `main.html` dengan menerapkan JavaScript dan Ajax. Saya juga menambahkan dua fungsi, yaitu `getItem` dan `refreshItems`, agar dapat menampilkan data dengan menggunakan Ajax dan secara otomatis memperbarui halaman.
+
+Selanjutnya, saya menyiapkan sebuah fungsi di `views.py` yang bertujuan untuk menambahkan produk dari pengguna melalui teknologi Ajax. Fungsi tersebut dinamakan `add_user_product` dan berfungsi mengambil data dari `request.POST`, lalu menambahkan produk baru ke dalam database. Saya juga mengonfigurasi rute untuk fungsi ini di berkas `urls.py` dengan nama `add_user_` dan endpoint `/create-ajax`. Di halaman `main.html`, saya juga menambahkan fungsi `addItem` untuk mengirim permintaan ke endpoint `/create-ajax` dengan menggunakan Ajax, serta secara otomatis memperbarui halaman.
+
+Terakhir, untuk menjalankan operasi `collectstatic`, saya membuat sebuah direktori bernama `static` di direktori utama proyek dan menambahkan pengaturan `STATIC_ROOT = os.path.join(BASE_DIR, 'static')` di berkas `settings.py`. Selanjutnya, saya menjalankan perintah `python manage.py collectstatic` untuk mengumpulkan berkas-berkas statis ke dalam folder `static` yang baru saja saya buat. Saya juga melakukan penambahan variabel `ALL_ALLOWED_HOSTS` di berkas `settings.py` guna menghindari terjadinya kesalahan csrf saat melakukan proses deployment.
+
+
+
 
 1. **Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.**
 Dalam asynchronous programming, tugas dijalankan secara berurutan satu per satu, sedangkan dalam synchronous programming, beberapa tugas dapat dijalankan secara bersamaan tanpa harus menunggu tugas sebelumnya selesai terlebih dahulu.
