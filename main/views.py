@@ -56,11 +56,10 @@ def show_main(request):
 def add_product_ajax(request):
     if request.method == 'POST':
         name = request.POST.get("name")
-        price = request.POST.get("price")
         description = request.POST.get("description")
         user = request.user
 
-        new_product = Product(name=name, price=price, description=description, user=user)
+        new_product = Product(name=name, description=description, user=user)
         new_product.save()
 
         return HttpResponse(b"CREATED", status=201)
@@ -195,12 +194,11 @@ def add_product_ajax(request):
 def edit_product_ajax(request, id):
     if request.method == 'POST':
         name = request.POST.get("name")
-        price = request.POST.get("price")
         amount = request.POST.get("amount")
         description = request.POST.get("description")
         user = request.user
 
-        new_product = Product(name=name, price=price, amount=amount, description=description, user=user)
+        new_product = Product(name=name, amount=amount, description=description, user=user)
         product = Product.objects.get(pk=id)
         product = new_product
         product.save()
@@ -228,7 +226,6 @@ def create_product_flutter(request):
         new_product = Product.objects.create(
             user = request.user,
             name = data["name"],
-            price = int(data["price"]),
             description = data["description"]
         )
 
